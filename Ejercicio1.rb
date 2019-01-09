@@ -15,7 +15,7 @@ class Alumno
     data.each do |alumno|
       alumnos << Alumno.new(*alumno.split(', '))
     end
-    return alumnos
+    alumnos
   end
 end
 
