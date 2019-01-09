@@ -1,10 +1,18 @@
 module Formula
-  def perimetro(lado1, lado2)
-    (2 * lado1 + 2 * lado2)
+  def perimetro
+    if self.class == Rectangulo
+    (2 * self.base + 2 * self.altura)
+    elsif self.class == Cuadrado
+    (4 * self.lado)
+    end
   end
 
-  def area(lado1, lado2)
-    lado1 * lado2
+  def area
+    if self.class == Rectangulo
+    ( self.base * self.altura)
+    elsif self.class == Cuadrado
+    ( self.lado)
+    end
   end
 end
 
@@ -36,10 +44,11 @@ end
 
 rectangulo1 = Rectangulo.new(rand(1..10), rand(1..10))
 cuadrado1 = Cuadrado.new(rand(1..10))
-puts cuadrado1.lados
-puts cuadrado1.area(cuadrado1.lado, cuadrado1.lado)
-puts cuadrado1.perimetro(cuadrado1.lado, cuadrado1.lado)
 
 puts rectangulo1.lados
-puts rectangulo1.area(rectangulo1.base, rectangulo1.altura)
-puts rectangulo1.perimetro(rectangulo1.base, rectangulo1.altura)
+puts rectangulo1.perimetro
+puts rectangulo1.area
+
+puts cuadrado1.lados
+puts cuadrado1.perimetro
+puts cuadrado1.area
